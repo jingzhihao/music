@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "Search": "../../components/music/search/search",
+        "vant-input": "../../lib/vant/field/index"
+    }
+}

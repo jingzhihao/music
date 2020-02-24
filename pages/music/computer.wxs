@@ -1,0 +1,7 @@
+var getRound = function(num) {
+    if (Math.round(num / 10000) > 10000) {
+        return Math.round((num / 10000) / 10000) + '亿';
+    }
+    return Math.round(num / 10000) + '万';
+}
+module.exports.getRound = getRound;

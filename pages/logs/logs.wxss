@@ -1,0 +1,13 @@
+.item {
+    padding: 20rpx 0;
+    width: 45%;
+    position: relative;
+}
+
+.line {
+    position: absolute;
+    width: 100%;
+    height: 4rpx;
+    background-color: red;
+    bottom: -10rpx;
+}

@@ -1,0 +1,82 @@
+.flex {
+    display: flex;
+}
+
+.f-col {
+    flex-direction: column;
+}
+
+.a-center {
+    align-items: center;
+}
+
+.j-end {
+    justify-content: flex-end;
+}
+
+.j-center {
+    justify-content: center;
+}
+
+.j-between {
+    justify-content: space-between;
+}
+
+.j-around {
+    justify-content: space-around;
+}
+
+.t-center {
+    text-align: center;
+}
+
+.f-1 {
+    flex: 1;
+}
+
+.m-t {
+    margin: 0 auto;
+}
+
+.m-t-1 {
+    margin-top: 20rpx;
+}
+
+.m-t-2 {
+    margin-top: 40rpx;
+}
+
+.m-l-1 {
+    margin-left: 20rpx;
+}
+
+.a-box {
+    text-indent: 2em
+}
+
+.f-column {
+    flex-direction: column;
+}
+
+.f-weight {
+    font-weight: 700;
+}
+
+
+/* 盒子不换行 */
+
+.w-space {
+    white-space: nowrap;
+}
+
+.p-relative {
+    position: relative;
+}
+
+.p-absolute {
+    position: absolute;
+}
+
+.inline-b {
+    display: inline-block;
+}

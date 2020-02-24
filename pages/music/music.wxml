@@ -1,0 +1,168 @@
+<wxs src="computer.wxs" module="computer" />
+<view class='music_index'>
+  <view class="music_input m-t j-around flex j-center a-center">
+    <text class='title'>音乐馆</text>
+    <view>
+      <vant-input left-icon="search" class="input" custom-style="border: 2rpx solid #eee;" type="text" placeholder="输入歌名" />
+    </view>
+    <image class="" src="../../assets/images/yingyue.png" />
+      
+  </view>
+  <view class='banner_wrap'>
+    <swiper class='banner_inner' indicator-dots indicator-color="rgba(255,255,255,.3)" indicator-active-color="rgba(194,12,12,.7)" autoplay circular>
+      <swiper-item class='banner_item' wx:for="{{bannerList}}" wx:key="index">
+        <navigator class='banner_link'>
+          <image src="{{item.imageUrl}}"></image>
+        </navigator>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class='category_wrap j-around flex a-center'>
+    <view class='category_item'>
+      <view class='f-column a-center flex'>
+        <view class='category_pic'>
+          <image src='../../assets/images/calendar.svg'></image>
+        </view>
+        <view class='category_text'>每日推荐</view>
+      </view>
+    </view>
+    <view class='category_item'>
+      <view class='f-column a-center flex'>
+        <view class='category_pic'>
+          <image src='../../assets/images/songSheet.svg'></image>
+        </view>
+        <view class='category_text'>歌单</view>
+      </view>
+    </view>
+    <view class='category_item'>
+      <view class='f-column a-center flex'>
+        <view class='category_pic'>
+          <image src='../../assets/images/rankingList.svg'></image>
+        </view>
+        <view class='category_text'>排行榜</view>
+      </view>
+    </view>
+    <view class='category_item'>
+      <view class='f-column a-center flex'>
+        <view class='category_pic'>
+          <image src='../../assets/images/MV.svg'></image>
+        </view>
+        <view class='category_text'>MV</view>
+      </view>
+    </view>
+    <view class='category_item'>
+      <view class='f-column a-center flex'>
+        <view class='category_pic'>
+          <image src='../../assets/images/radioStation.svg'></image>
+        </view>
+        <view class='category_text'>电台</view>
+      </view>
+    </view>
+  </view>
+  <view class='recommend_wrap'>
+    <view class='j-between flex'>
+      <text class='title'>推荐歌单</text>
+      <view class='more'>歌单广场</view>
+    </view>
+    <view class='recommend_list j-between flex'>
+      <view class='recommend_item' wx:for="{{recommendSongSheet}}" wx:key="index">
+        <view class='recommend_link'>
+          <view class='recommend_msg'>
+            <image src="{{item.picUrl}}" mode='widthFix'></image>
+            <view class='recommend_play'>
+              <text class='fa-play'>》</text>
+              <text class='play_number'>{{computer.getRound(item.playCount)}}</text>
+            </view>
+          </view>
+          <view class='recommend_name'>{{item.name}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='recommend_wrap'>
+    <view class='j-between flex'>
+      <view class="recommend_tipst flex j-between">
+        <view wx:for="{{list}}" wx:key="index" class="{{selected===index?'title':'show'}}" data-index='{{index}}' bind:tap="selected">
+          {{item}}
+        </view>
+      </view>
+      <view class='more'>
+        <view wx:if="{{selected===0}}">更多新碟</view>
+        <view wx:else>更多新歌</view>
+      </view>
+    </view>
+    <view wx:if="{{selected===0}}">
+      <view class='recommend_list j-between flex'>
+        <view class='recommend_item' wx:for="{{newDisc}}" wx:key="index">
+          <view class='recommend_link'>
+            <view class='recommend_msg'>
+              <image src="{{item.picUrl}}" mode='widthFix'></image>
+            </view>
+            <view class='recommend_name'>{{item.name}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:else>
+      <view class='recommend_list j-between flex'>
+        <view class='recommend_item' wx:for="{{newSong}}" wx:key="index">
+          <view class='recommend_link'>
+            <view class='recommend_msg'>
+              <image src="{{item.picUrl}}" mode='widthFix'></image>
+            </view>
+            <view class='recommend_name'>{{item.name}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='recommend_wrap'>
+    <view class='j-between flex'>
+      <text class='title'>音乐新势力</text>
+      <view class='more'>新音乐</view>
+    </view>
+    <view class='recommend_list j-between flex'>
+      <view class='recommend_item' wx:for="{{recommendSongSheet}}" wx:key="index">
+        <view class='recommend_link'>
+          <view class='recommend_msg'>
+            <image src="{{item.picUrl}}" mode='widthFix'></image>
+          </view>
+          <view class='recommend_name'>{{item.name}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='recommend_wrap'>
+    <view class='j-between flex'>
+      <text class='title'>推荐电台</text>
+      <view class='more'>电台广场</view>
+    </view>
+    <view class='recommend_list j-between flex'>
+      <view class='recommend_item' wx:for="{{djprogram}}" wx:key="index">
+        <view class='recommend_link'>
+          <view class='recommend_msg'>
+            <image src="{{item.picUrl}}" mode='widthFix'></image>
+          </view>
+          <view class='recommend_name'>{{item.name}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='recommend_wrap'>
+    <view class='j-between flex'>
+      <text class='title'>推荐节目</text>
+      <view class='more'>更多节目</view>
+    </view>
+    <view class='recommend_list j-between flex'>
+      <view class='recommend_item' wx:for="{{recommend}}" wx:key="index">
+        <view class='recommend_link'>
+          <view class='recommend_msg'>
+            <image src="{{item.blurCoverUrl}}" mode='widthFix'></image>
+          </view>
+          <view class='recommend_name'>{{item.name}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='t-center m-t-1'>到底了！！！</view>
+</view>

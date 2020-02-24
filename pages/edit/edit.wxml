@@ -1,0 +1,21 @@
+<view class="font f-weight">
+    <van-cell-group>
+        <vant-input input-align="right" value="{{ name }}" bind:change="changeName" label="昵称" placeholder="请输入昵称"></vant-input>
+        <vant-input input-align="right" value="{{ gender }}" right-icon="arrow" readonly bind:change="changeGender" label="性别" border="true" bind:click-icon="genderIcon"></vant-input>
+        <vant-input input-align="right" right-icon="arrow" value="{{ birthday }}" readonly bind:change="changeBirthday" label="生日" bind:click-icon="dataIcon"></vant-input>
+        <vant-input input-align="right" right-icon="arrow" value="{{ arr }}" readonly bind:change="changeArea" label="城市" bind:click-icon="areaIcon"></vant-input>
+        <vant-input type="textarea" value="{{ signature }}" clearable bind:change="changeSignature" label="个性签名"></vant-input>
+    </van-cell-group>
+</view>
+<view class="t-center warning">
+    <van-button type="warning" style="width: 100rpx;" bind:tap="logout">确认修改</van-button>
+</view>
+<!-- <van-area></van-area> -->
+<view class="fwt">
+    <!-- 城市 性别 生日的弹出层 -->
+    <van-picker show-toolbar wx:if="{{showtoolbar}}" title="请选择" columns="{{ genderList }}" columns-num="{{ 2 }}" bind:cancel="genderCancel" bind:confirm="genderConfirm"></van-picker>
+    <!-- 时间选择器 -->
+    <van-datetime-picker wx:if="{{showdata}}" value="{{newtime}}" type="date" max-date="{{ maxDate }}" min-date="{{ minDate }}" formatter="{{ formatter }}" bind:cancel="dateCancel" bind:confirm="dateConfirm"></van-datetime-picker>
+    <!-- 选择城市 -->
+    <van-area wx:if="{{showarea}}" area-list="{{ area }}" columns-num="{{ 2 }}" bind:cancel="areaCancel" bind:confirm="areaConfirm"></van-area>
+</view>

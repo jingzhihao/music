@@ -1,0 +1,30 @@
+.fwt {
+    font-size: 30rpx;
+    border-bottom: 1rpx solid #e4dfde;
+    font-weight: 500;
+}
+
+.type-box {
+    padding: 30rpx 20rpx;
+}
+
+.horizontal-line {
+    height: 4px;
+    width: 50%;
+    left: 22%;
+    bottom: 1rpx;
+    background-color: #f46f46;
+}
+
+.font-col {
+    color: rgb(147, 147, 148);
+}
+
+.letter-box {
+    padding: 16rpx 8rpx;
+}
+
+.font-stl {
+    background-color: rgb(178, 40, 31);
+    color: white;
+}

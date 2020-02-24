@@ -1,0 +1,10 @@
+.font {
+    width: 80%;
+    margin: 20rpx auto;
+}
+
+.warning {
+    margin-top: 60rpx;
+}
+
+.fwt {}

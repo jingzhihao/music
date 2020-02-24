@@ -1,0 +1,15 @@
+<scroll-view scroll-x="{{true}}" class="fwt w-space a-center t-center ">
+    <view wx:for="{{typeList}}" wx:key="index" data-item="{{item}}" data-index="{{index}}" bind:tap="clickItem" class="inline-b p-relative a-center t-center">
+        <view class="type-box {{chooseType === index ? '' : 'font-col'}}">{{item.name}}</view>
+        <view class="p-absolute horizontal-line" wx:if="{{chooseType === index}}"></view>
+    </view>
+</scroll-view>
+<scroll-view scroll-x="{{true}}" class="w-space a-center " wx:if="{{showIndex !== 0}}">
+    <view class="inline-b letter-box {{chooseIndex===index ? 'font-stl' :''}}" wx:for="{{initialList}}" wx:key="index" data-item="{{item}}" data-index="{{index}}" bind:tap="clickLetter">
+        {{item}}
+    </view>
+</scroll-view>
+
+<!-- 入住歌手 -->
+<singer list="{{list}}" limit="{{limit}}" id="enter"  bind:limit='limit'></singer>
+

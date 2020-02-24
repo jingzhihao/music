@@ -1,0 +1,37 @@
+<view class="t-center contion" wx:if="{{uid === ''}}">
+    <view>你还没用登录哦</view>
+    <view>
+        <van-button type="info" bind:tap="goLogs">立即登录</van-button>
+    </view>
+</view>
+<view wx:else>
+    <view class="flex j-around a-center m-t-2">
+        <image class="image" src="{{profile.avatarUrl}}" />
+        <view style="width: 280rpx;" class="t-center">
+            <view class="nickname f-weight">{{profile.nickname}}</view>
+            <text class="level">lv:{{level}}</text>
+        </view>
+        <view class="qingdao">签到</view>
+    </view>
+    <view class="contion-font flex j-around a-center">
+        <view class="t-center">
+            <view class="eventCount">{{profile.eventCount}}</view>
+            <view class="eventCount-name">动态</view>
+        </view>
+        <view class="t-center">
+            <view>{{profile.follows}}</view>
+            <view class="eventCount-name">关注</view>
+        </view>
+        <view class="t-center">
+            <view>{{profile.followeds}}</view>
+            <view class="eventCount-name">粉丝</view>
+        </view>
+        <view class="t-center" bind:tap="edit">
+            <image class="eventCount-image" src="../../assets/images/editor.png" />
+            <view class="eventCount-name">编辑资料</view>
+        </view>
+    </view>
+    <view class="t-center m-t-2">
+        <van-button type="warning" bind:tap="logout">退出登录</van-button>
+    </view>
+</view>

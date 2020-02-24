@@ -1,0 +1,42 @@
+.contion {
+    line-height: 100rpx;
+}
+
+.image {
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 50%;
+}
+
+.contion-font {
+    margin-top: 100rpx;
+}
+
+.nickname {
+    line-height: 80rpx;
+}
+
+.level {
+    font-size: 34rpx;
+    padding: 4rpx 10rpx;
+    background-color: #E0E0DF;
+    border-radius: 26rpx;
+}
+
+.qingdao {
+    font-size: 24rpx;
+    padding: 6rpx 16rpx;
+    background-color: #E0E0DF;
+    border-radius: 26rpx;
+    color: #fff;
+}
+
+.eventCount-image {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.eventCount-name {
+    padding: 10rpx 10rpx;
+    color: rgb(155, 155, 155);
+}

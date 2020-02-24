@@ -1,0 +1,10 @@
+<view wx:for="{{list}}" wx:key="index" class="font flex a-center">
+    <image class="image" src="{{item.picUrl}}" />
+    <view class="name">{{item.name}}</view>
+</view>
+
+
+
+<!-- <view wx:if="{{list.length <  limit}}">
+    到底了
+</view> -->

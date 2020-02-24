@@ -1,0 +1,7 @@
+<view class="search_wrap">
+  <view class='search_inner' bindtap='toSearch'>
+    <text class='fa fa-search'>音乐馆</text>
+    <text class='fa fa-search'></text>
+    <text class='search_text'>搜索</text>
+  </view>
+</view>
